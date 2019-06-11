@@ -4,9 +4,11 @@ node_js:
   - 10
 install:
   - npm install
+  - npm install coveralls
 script:
   - npm run test
   - npm run lint
+  - jest --coverage --coverageReporters=text-lcov | coveralls
 
 deploy:
   provider: script
